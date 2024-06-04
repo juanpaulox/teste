@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="api.flit.com.br/submeterDados">
+        <input type="text" placeholder="Nome" id="nome">
+        <input type="text" placeholder="Endereço" id="endereco">
+        <input type="date" id="inicioDaSemana">
+        <input type="date" id="terminoDaSemana">
+        <input type="time" id="abertura">
+        <input type="time" id="fechamento">
+    </form>
+    <script>
+        function obterNome() {
+            document.getElementById('nome').value = window.localStorage.getItem('Nomes');
+        }
+
+        function obterEndereco(){
+            document.getElementById('endereco').value = window.localStorage.getItem('Endereços');
+        }
+
+        function obterInicioDaSemana(){
+            document.getElementById('inicioDaSemana').value = window.localStorage.getItem('Inicio');
+        }
+
+        function obterTerminoDaSemana(){
+            document.getElementById('terminoDaSemana').value = window.localStorage.getItem('Termino');
+        }
+
+        function obterAberturaDaSemana(){
+            document.getElementById('abertura').value = window.localStorage.getItem('Abertura');
+        }
+
+        function obterFechamentoDaSemana(){
+            document.getElementById('fechamento').value = window.localStorage.getItem('Fechamento');
+        }
+
+         //CARREGAR E FIXAR VALOR AUTOMATICAMENTE NOS FORMS
+        window.addEventListener('load', obterFechamentoDaSemana)
+        window.addEventListener('load', obterAberturaDaSemana)
+        window.addEventListener('load', obterTerminoDaSemana)
+        window.addEventListener('load', obterInicioDaSemana)
+        window.addEventListener('load', obterEndereco)
+        window.addEventListener('load', obterNome)
+        </script>
+    <script src="./index.js"></script>
+</body>
+</html>

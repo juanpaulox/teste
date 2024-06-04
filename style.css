@@ -1,0 +1,34 @@
+form{
+    display: grid;
+    gap: 10px; /* Espaçamento entre os inputs */
+}
+
+/* Menos de 400px: 1 campo por linha */
+@media (max-width: 399px) {
+    form{
+        grid-template-columns: 1fr;
+    }
+    body{
+        background-color: #9297C4;
+    }
+}
+
+/* Entre 400px e 799px: 2 campos por linha */
+@media (min-width: 400px) and (max-width: 799px) {
+    form{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    body{
+        background-color: #9368B7;
+    }
+}
+
+/* A partir de 800px: 3 campos por linha */
+@media (min-width: 800px) {
+    form{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    body{
+        background-color: #AA3E98;
+    }
+}
